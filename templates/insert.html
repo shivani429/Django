@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script>
+        function check_fname(){  
+            var f = document.frm.fname.value;
+            var reg = "/^[A-Za-z]+$" 
+            if(f.trim()==""){
+                document.getElementById("error1").innerHTML="Please Enter your name";
+            }else if(!(/^[A-Za-z]+$/.test(f))){
+                document.getElementById("error1").innerHTML="Please Enter only Alphabets";
+            }else{
+                document.getElementById("error1").innerHTML="";
+            }
+        }
+        function check_lname(){
+            var a = document.frm.lname.value;
+            var reg = "/^[A-Za-z]+$/"
+            if(a.trim()==""){
+                document.getElementById("error2").innerHTML="Please Enter your lastname";
+            }else if (!(/^[A-Za-z]+$/.test(a))){
+                document.getElementById("error2").innerHTML="Please Enter Only Alphabets";
+            }else{
+                pass
+            }
+        }
+        function check_email(){
+            var e = document.frm.email.value;
+            var reg = "/^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/"
+            if(e.trim()==""){
+                document.getElementById("error3").innerHTML="Please Enter your email";
+            }
+        }
+        function check_contact(){
+            var n = document.frm.contact.value;
+            var reg = "/^[0-9]$/"
+            if(n.trim()==""){
+                document.getElementById("error4").innerHTML="Please Enter your Number";
+            }else{
+                document.getElementById("error4").innerHTML="Please enter";
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>HTML Form</h1>
+    <form method="POST" name="frm">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Firstname</td>
+                <td><input type="text"  name="fname" id="" onblur="check_fname();"></td>
+                <td><span id="error1" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Lastname</td>
+                <td><input type="text"  name="lname" id="" onblur="check_lname();"></td>
+                <td><span id="error2" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="" onblur="check_email();"></td>
+                <td><span id="error3" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td><input type="tel" name="contact" id="" onblur="check_contact();" pattern="[1-9]{1}[0-9]{9}" maxlength="10"></td>
+                <td><span id="error4" style="color: red;"></span></td>
+            </tr>
+            <tr>
+                <td><button class="" type="submit">submit</button></td>
+            </tr>
+        </center>
+        </table>
+    </form>
+</body>
+</html>
+
+
+

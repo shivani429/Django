@@ -1,0 +1,42 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employe details</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+</head>
+<body>
+    {% block content %}
+    <center><h1>Employee List</h1></center>
+    
+    <a href="{% url 'add_employee' %}" type="button"><h6>Add Employee</h6></a>
+    <div class="maindiv">
+        <table class="table table-dark">
+            <tr>
+                <th>ID</th>
+                <th>E.ID</th> 
+                <th>EName</th>
+                <th>Ephn</th>
+                <th>Esalary</th>
+                <th>Delete</th>
+                <th>update</th>
+            </tr>
+            {% for i in employee_list %}
+            <tr>
+                
+                <td>{{i.id}}</td>
+                <td>{{i.eid}}</td>
+                <td>{{i.ename}}</td>
+                <td>{{i.ephn}}</td>
+                <td>{{i.esalary}}</td>
+                <td><a href="{% url 'delete_employee' id=i.id %}">Delete</a></td>
+                <td><a href="{% url 'edit_employee' id=i.id %}">Update</a></td>
+                    
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <a href="{% url 'home' %}" type="button"><h6>Home</h6></a>
+    {% endblock %}
+</body>
+</html>

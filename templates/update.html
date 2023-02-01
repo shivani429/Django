@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    <form method="POST">
+        {% csrf_token%}
+        <!-- {{form.as_p}} -->
+        <div class="form-group">
+            <!-- {% comment %} <label for="{{ form.name.id_for_label }}">name</label> {% endcomment %} -->
+            <label for="">name:</label>
+            <input type="text" value="{{stu.name}}" name="name">
+            <!-- {% comment %} {{ form.name }} {% endcomment %} -->
+        </div>
+        <div class="form-group">
+            <!-- {% comment %} <label for="{{ form.roll_no.id_for_label }}">Roll no</label> {% endcomment %} -->
+            <label for="">Roll no:</label>
+            <input type="text" value="{{stu.Roll_no}}" name="Roll_no">
+            <!-- {% comment %} {{ form.roll_no }} {% endcomment %} -->
+        </div>
+        <div class="form-group">
+            <!-- {% comment %} <label for="{{ form.class_no.id_for_label }}">class no</label> {% endcomment %} -->
+            <label for="">Class no: </label>
+            <input type="text" value="{{stu.class_no}}" name="class_no">
+            <!-- {% comment %} {{ form.class_no }} {% endcomment %} -->
+        </div>
+        <div class="form-group">
+            <!-- {% comment %} <label for="{{ form.address.id_for_label }}">Address</label> {% endcomment %} -->
+            <label for="">Address: </label>
+            <input type="text" value="{{stu.Address}}" name="Address">
+            <!-- {% comment %} {{ form.address }} {% endcomment %} -->
+        </div>
+        <button class="" type="submit">submit</button>
+    </form>
+</body>
+</html>

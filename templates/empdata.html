@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Employee Data</title>
+</head>
+<body>
+    <center><div class="col-sm-12">
+        <h3 class="text-center alert alert-info">Employee Data</h3>
+    </div>
+    <table class="table table-hover" width="1000px" border="1px">
+        <tr>
+            <th>Empcode</th>
+            <th>Name</th>
+            <th>DOBirth</th>
+            <th>DOJoining</th>
+            <th>DOAnniversary</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for obj in object %}
+        <tr>
+            <td>{{obj.Empcode}}</td>
+            <td>{{obj.Name}}</td>
+            <td>{{obj.DOBirth}}</td>
+            <td>{{obj.DOJoining}}</td>
+            <td>{{obj.DOAnniversary}}</td>
+            <td>{{obj.Email}}</td>
+            <td><a href="{% url 'update_data' id=obj.id %}">Update</a></td>
+            <td><a href="{% url 'delete_data' id=obj.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'edata' %}">Data</a></center>
+</body>
+</html>

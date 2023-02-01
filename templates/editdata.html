@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update.data</title>
+</head>
+<body>
+    {% block content %}
+    <form method="POST">
+        {% csrf_token %}
+    <h3>Update Data</h3>
+    <div>
+        <label for="">Empcode: </label>
+        <input type="text" name="Empcode" value="{{object.Empcode}}">
+    </div>
+    <div>
+        <label for="">Name: </label>
+        <input type="text" name="Name" value="{{object.Name}}">
+    </div>
+    <div>
+        <label for="">DOBirth: </label>
+        <input type="date" name="DOBirth" value="{{object.DOBirth}}">
+    </div>
+    <div>
+        <label for="">DOJoining: </label>
+        <input type="date" name="DOJoining" value="{{object.DOJoining}}">
+    </div>
+    <div>
+        <label for="">DOAnniversary: </label>
+        <input type="date" name="DOAnniversary" value="{{object.DOAnniversary}}">
+    </div>
+    <div>
+        <label for="">Email: </label>
+        <input type="email" name="Email" value="{{object.Email}}">
+    </div>
+    <div>
+        <button type="submit">Update</button>
+    </div>
+    </form>
+    {% endblock %}
+</body>
+</html>

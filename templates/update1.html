@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <form method="POST">
+       
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="">Basic: </label>
+            <input type="text" value="{{salary.basic}}" name="basic" > 
+        </div>
+        <div class="form-group">
+            <label for="">HRA: </label>
+            <input type="text" value="{{salary.hra}}" name="hra"> 
+        </div>
+        <div class="form-group">
+            <label for="">Special Allowance: </label>
+            <input type="text" value="{{salary.special_allowance}}" name="special_allowance"> 
+        </div>
+        <div class="form-group">
+            <label for="">PF Deduction: </label>
+            <input type="text" value="{{salary.pf_deduction}}" name="pf_deduction"> 
+        </div>
+        <div class="form-group">
+            <label for="">Income Tax: </label>
+            <input type="text" value="{{salary.income_tax}}" name="income_tax"> 
+        </div>
+        <div class="form-group">
+            <label for="">Proffesional Tax: </label>
+            <input type="text" value="{{salary.proffesional_tax}}" name="proffesional_tax"> 
+        </div>
+        <div class="form-group">
+            <label for="">Convenience: </label>
+            <input type="text" value="{{salary.convenience}}" name="convenience"> 
+        </div>
+        <div class="form-group">
+            <label for="">LTA: </label>
+            <input type="text" value="{{salary.lta}}" name="lta"> 
+        </div>
+
+        <div class="form-group">
+            <label for="">Employee: </label>
+            <select name="employee" required>
+                {% for emp in employee_list %}
+                <option value="{{emp.id}}">{{emp}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit">submit</button>
+       
+    </form>
+    {% endblock %}
+</body>
+</html>

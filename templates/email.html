@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Employee Form</title>
+</head>
+<body class="container mt-4">
+    <form method="POST">
+    <div class="col-sm-4">
+        <h3 class="text-center alert alert-info">Employee Form</h3>
+    </div>
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="">Empcode:</label>
+        <input type="text" name="Empcode">
+    </div>
+    <div class="form-group row">
+        <label for="">Name:</label>
+        <input type="text" name="Name">
+    </div>
+    <div class="form-group row">
+        <label for="">DOBirth:</label>
+        <input type="date" name="DOBirth">
+    </div>
+    <div class="form-group row">
+        <label for="">DOJoining:</label>
+        <input type="date" name="DOJoining">
+    </div>
+    <div class="form-group row">
+        <label for="">DOAnniversary:</label>
+        <input type="date" name="DOAnniversary">
+    </div>
+    <div class="form-group row">
+        <label for="">Email:</label>
+        <input type="email" name="Email">
+    </div>
+    <div class="">
+        <button type="submit" class="btn btn-primary btn-sm">submit</button>
+       
+    </div>
+    </form>
+</body>
+</html>

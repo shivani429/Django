@@ -1,0 +1,15 @@
+{% extends 'block.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div>
+        <div style="border: black; border-width:5px; border-style:solid;">
+            <div class="card-body">
+                <h5 class="card-text">Score: {{score}}</h5>
+                <p class="card-text">Correct answers: {{correct}}</p>
+                <p class="card-text">Incorrect answers: {{wrong}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+            </div>
+        </div>    
+    </div>
+</div>
+{% endblock %}

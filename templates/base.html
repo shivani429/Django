@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Django Project</title>
+     <link rel="stylesheet" href="static\css\bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" >
+        <div class="container-fluid" >
+            <div class="navabr-collapse" id="NavbarNavAltMarkup">
+                <div class="navbar-nav" >
+                    <a class="nav-link activate" aria-current="page" href="#" style="color: indigo;">Home</a>
+                    <a class="nav-link activate" href="{% url 'student_list' %}" style="color: indigo;">Student</a>
+                    <a class="nav-link activate" href="{% url 'employee_list' %}" style="color: indigo;">Employee</a>
+                </div>
+            </div>
+        </div>
+        <span><a class="nav-link activate" href="{% url 'logout' %}" style="color: indigo;">logout</a></span>
+    </nav>
+    {% block content%}
+        
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>    
+    <script src="static\js\bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+</body>
+</html>

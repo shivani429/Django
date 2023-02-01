@@ -1,0 +1,50 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title> Employee Salary list</title>
+</head>
+<body>
+    {% block content %}
+    <center><h1>Employee Salary List</h1></center>
+    {% csrf_token %}
+    <h6><a href="{% url 'addcontent' %}" type="button">Add content</a></h6>
+    <div class="maindiv">
+        <table class="table table-dark">
+        <tr>
+            <th>Basic</th>
+            <th>HRA</th>
+            <th>Special Allowance</th>
+            <th>PF Deduction</th>
+            <th>Income Tax</th>
+            <th>Proffesional Tax</th>
+            <th>Convenience</th>
+            <th>LTA</th>
+            <th>Employee</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {% for i in salary_list %}
+        <tr>
+            <td>{{i.basic}}</td>
+            <td>{{i.hra}}</td>
+            <td>{{i.special_allowance}}</td>
+            <td>{{i.pf_deduction}}</td>
+            <td>{{i.income_tax}}</td>
+            <td>{{i.proffesional_tax}}</td>
+            <td>{{i.convenience}}</td>
+            <td>{{i.lta}}</td>
+            <td>{{i.employee}}</td>
+            <td><a href="{% url 'deletesalary' id=i.id %}">Delete</a></td>
+            <td><a href="{% url 'update_salary' id=i.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    {% endblock %}
+</body>
+</html>

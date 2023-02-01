@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>authentication</title>
+</head>
+<body>
+    <h1>Django Authentication</h1>
+    <form method="POST" action="{% url 'demo'%}">
+        {% csrf_token %}
+        <p>Username: <input type="text" name="username"></p>
+        <p>Password: <input type="text" name="password"></p>
+        <input type="submit" value="login">
+        <input type="hidden" value="{{next}}" name="next">
+    </form>
+</body>
+</html>
